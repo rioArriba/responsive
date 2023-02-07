@@ -7,19 +7,20 @@
 "02_base/reset";
 
 @import
+"03_layout/l-gap",
+"03_layout/l-display",
+"03_layout/l-overflow",
 "03_layout/l-flex";
 
 @import
-"04_components/c-panel",
 "04_components/c-button",
-"04_components/c-header",
-"04_components/c-contenedor";
+"04_components/c-header";
 
 @import
 "06_global/g--colors",
 "06_global/g--padding",
-"06_global/g--gap",
 "06_global/g--margin",
+"06_global/g--font-weight",
 "06_global/g--font-size",
 "06_global/g--border-radius",
 "06_global/g--clear-list",

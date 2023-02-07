@@ -1,12 +1,21 @@
-@each $key in getWidthKeys(){
-    $value:getWidth($key);
-    .g--width-#{$key} {
+@each $media_key in getMediaKeys() {
+  $media_value: getMedia($media_key);
+  $modificador: "";
+  @if ($media_key != "") {
+    $modificador: "\\@#{$media_key}";
+  }
+  @media (min-width: $media_value) {
+    @each $key in getWidthKeys() {
+      $value: getWidth($key);
+      .g--width-#{$key}#{$modificador} {
         width: $value;
-    }
-    .g--min-width-#{$key} {
+      }
+      .g--min-width-#{$key}#{$modificador} {
         min-width: $value;
-    }
-    .g--max-width-#{$key} {
+      }
+      .g--max-width-#{$key}#{$modificador} {
         max-width: $value;
+      }
     }
+  }
 }

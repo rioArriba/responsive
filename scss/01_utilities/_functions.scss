@@ -1,15 +1,15 @@
 //COLORS
 
-@function getColors($nombreColor, $clave){
+@function getColor($nombreColor, $clave){
   $arrayColor:map-get($colors, $nombreColor);
   @return nth($arrayColor, $clave + 1);
 }
 
-@function getColorsKeys(){
+@function getColorKeys(){
     @return (map-keys($colors));
 }
 
-@function getVariantesColorsKeys(){
+@function getVariantesColorKeys(){
   $arrayKeys:();
     @for $i from 0 to length(map-get($colors, "principal")){      
       $arrayKeys:append($arrayKeys, $i);
@@ -107,7 +107,7 @@
 //SHADOW
 
 @function getShadow($key){
-  @return unquote(nth($shadow, $key + 1));//unquote quita ""
+  @return unquote(nth($shadow, $key + 1));
 }
 
 @function getShadowKeys(){
@@ -149,4 +149,28 @@
 
 @function getMediaKeys(){
   @return map-keys($media);
+}
+
+//DISPLAY
+
+@function getDisplay($clave){
+  @return map-get($display, $clave);
+}
+
+@function getDisplayKeys(){
+  @return map-keys($display);
+}
+
+//FONT-WEIGHT
+
+@function getFontWeight($clave){
+  @return nth($font-weight, $clave + 1);
+}
+
+@function getFontWeightKeys(){
+  $arrayKeys:();
+  @for $i from 0 to length($font-weight){  
+      $arrayKeys:append($arrayKeys, $i);
+  }
+  @return $arrayKeys;
 }

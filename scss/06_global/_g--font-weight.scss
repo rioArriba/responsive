@@ -1,0 +1,16 @@
+@each $media_key in getMediaKeys() {
+    $media_value: getMedia($media_key);
+    $modificador: "";
+    @if ($media_key != "") {
+      $modificador: "\\@#{$media_key}";
+    }
+    @media (min-width: $media_value) {
+      @each $key in getFontWeightKeys() {
+        $value: getFontWeight($key);
+        .g--font-weight-#{$key}#{$modificador} {
+          font-weight: $value;
+        }
+      }
+    }
+  }
+  

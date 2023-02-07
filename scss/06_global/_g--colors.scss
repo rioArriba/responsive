@@ -1,14 +1,23 @@
-@each $tipoColor in getColorsKeys(){
-    @each $variante in getVariantesColorsKeys(){
-      $value:getColors($tipoColor, $variante);
-        .g--background-#{$tipoColor}-#{$variante} {
+@each $media_key in getMediaKeys() {
+  $media_value: getMedia($media_key);
+  $modificador: "";
+  @if ($media_key != "") {
+    $modificador: "\\@#{$media_key}";
+  }
+  @media (min-width: $media_value) {
+    @each $tipoColor in getColorKeys() {
+      @each $variante in getVariantesColorKeys() {
+        $value: getColor($tipoColor, $variante);
+        .g--background-#{$tipoColor}-#{$variante}#{$modificador} {
           background-color: $value;
         }
-        .g--color-#{$tipoColor}-#{$variante} {
+        .g--color-#{$tipoColor}-#{$variante}#{$modificador} {
           color: $value;
-        } 
-        .g--border-color-#{$tipoColor}-#{$variante} {
+        }
+        .g--border-color-#{$tipoColor}-#{$variante}#{$modificador} {
           border-color: $value;
         }
+      }
     }
+  }
 }

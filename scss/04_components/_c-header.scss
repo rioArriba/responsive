@@ -1,6 +1,6 @@
 .c-header-2 {
   display: grid;
-  grid-template: 1fr 1fr / 90px 90px 90px 90px 90px;
+  grid-template: 1fr 1fr / repeat(5, 100px);
   gap: getGap(8) getGap(8);
   margin-top: getMargin(8);
   margin-left: min(600px, 30vw);
@@ -35,7 +35,7 @@
     margin-right: getMargin(6);
     font-size: xx-large;
 }
-@media (max-width: getWidth(6)) {
+@media (max-width: getMedia('tablet')) {
     .c-header-2__burger {
         display: block;
     }
@@ -71,7 +71,7 @@
   align-items: center;
   gap: getGap(8);
   background-image: url("../assets/img/andreu_world_carola_1.webp");
-  height: 800px;
+  height: 100vh;
   background-repeat: no-repeat;
 }
 

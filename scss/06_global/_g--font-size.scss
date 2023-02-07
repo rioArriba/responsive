@@ -1,24 +1,15 @@
-@each $key in getFontSizeKeys() {
-  $value:getFontSize($key);
-    .g--font-size-#{$key} {
-      font-size: $value;
-    }
-}
-
-@media(min-width:getWidth(6)){
-  @each $key in getFontSizeKeys() {
-    $value:getFontSize($key);
-      .g--font-size-#{$key}\@tablet {
-        font-size: $value;
-      }
+@each $media_key in getMediaKeys() {
+  $media_value: getMedia($media_key);
+  $modificador: "";
+  @if ($media_key != "") {
+    $modificador: "\\@#{$media_key}";
   }
-}
-
-@media(min-width:getWidth(8)){
-  @each $key in getFontSizeKeys() {
-    $value:getFontSize($key);
-      .g--font-size-#{$key}\@desktop {
+  @media (min-width: $media_value) {
+    @each $key in getFontSizeKeys() {
+      $value: getFontSize($key);
+      .g--font-size-#{$key}#{$modificador} {
         font-size: $value;
       }
+    }
   }
 }

@@ -1,0 +1,19 @@
+@each $media_key in getMediaKeys() {
+    $media_value: getMedia($media_key);
+    $modificador: "";
+    @if ($media_key != "") {
+      $modificador: "\\@#{$media_key}";
+    }
+    @media (min-width: $media_value) {
+      @each $key in getGapKeys() {
+        $value: getGap($key);
+        .l-flex--gap-#{$key}#{$modificador} {
+          gap: $value;
+        }
+        .l-grid--gap-#{$key}#{$modificador} {
+          gap: $value;
+        }
+      }
+    }
+  }
+  

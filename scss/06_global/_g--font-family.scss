@@ -1,6 +1,15 @@
-@each $key in getFontFamilyKeys(){
-    $value:getFontFamily($key);
-    .g--font-family-#{$key} {
+@each $media_key in getMediaKeys() {
+  $media_value: getMedia($media_key);
+  $modificador: "";
+  @if ($media_key != "") {
+    $modificador: "\\@#{$media_key}";
+  }
+  @media (min-width: $media_value) {
+    @each $key in getFontFamilyKeys() {
+      $value: getFontFamily($key);
+      .g--font-family-#{$key} {
         font-family: $value;
+      }
     }
+  }
 }
