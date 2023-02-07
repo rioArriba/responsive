@@ -1,0 +1,36 @@
+@each $media_key in getMediaKeys() {
+  $media_value: getMedia($media_key);
+  $modificador: "";
+  @if ($media_key != "") {
+    $modificador: "\\@#{$media_key}";
+  }
+  @media (min-width: $media_value) {
+    @each $key in getMarginKeys() {
+      $value: getMargin($key);
+
+      .g--margin-#{$key}#{$modificador} {
+        margin: $value;
+      }
+      .g--margin-left-#{$key}#{$modificador} {
+        margin-left: $value;
+      }
+      .g--margin-right-#{$key}#{$modificador} {
+        margin-right: $value;
+      }
+      .g--margin-top-#{$key}#{$modificador} {
+        margin-top: $value;
+      }
+      .g--margin-bottom-#{$key}#{$modificador} {
+        margin-bottom: $value;
+      }
+      .g--margin-horizontal-#{$key}#{$modificador} {
+        margin-left: $value;
+        margin-right: $value;
+      }
+      .g--margin-vertical-#{$key}#{$modificador} {
+        margin-top: $value;
+        margin-bottom: $value;
+      }
+    }
+  }
+}

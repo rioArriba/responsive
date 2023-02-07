@@ -1,0 +1,112 @@
+.c-header-2 {
+  display: grid;
+  grid-template: 1fr 1fr / 90px 90px 90px 90px 90px;
+  gap: getGap(8) getGap(8);
+  margin-top: getMargin(8);
+  margin-left: min(600px, 30vw);
+  margin-right: 60px;
+  color: black;
+  text-decoration: none;
+  font-size: getFontSize("xs");
+
+  &__link {
+    color: black;
+    text-decoration: none;
+    &--font {
+      font-size: getFontSize("m");
+    }
+  }
+}
+@media (max-width: getWidth(9)) {
+  .c-header-2 {
+    gap: getGap(6) getGap(1);
+  }
+}
+@media (max-width: getWidth(6)) {
+  .c-header-2 {
+    display: none;
+  }
+}
+
+.c-header-2__burger {
+    display: none;
+    font-weight: bolder;
+    margin-top: getMargin(12);
+    margin-right: getMargin(6);
+    font-size: xx-large;
+}
+@media (max-width: getWidth(6)) {
+    .c-header-2__burger {
+        display: block;
+    }
+    
+}
+
+.c-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: getMargin(8);
+}
+.c-header {
+  margin-top: getMargin(12);
+  width: 160px;
+  margin-left: 30px;
+}
+
+@media (max-width: getWidth(9)) {
+  .c-header {
+    width: 100px;
+  }
+}
+@media (max-width: getWidth(6)) {
+  .c-header {
+    width: 160px;
+  }
+}
+.c-image-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: getGap(8);
+  background-image: url("../assets/img/andreu_world_carola_1.webp");
+  height: 800px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: getWidth(9)) {
+    .c-image-text {
+      height: 1200px;
+    }
+  }
+  @media (max-width: getWidth(6)) {
+    .c-image-text {
+      height: 600px;
+    }
+  }
+.c-image-text__p1 {
+  font-family: getFontFamily(1);
+  font-size: 200px;
+  color: getColors("blanco", 0);
+  text-align: center;
+}
+.c-image-text__p2 {
+  font-family: getFontFamily(1);
+  font-size: getFontSize("4xl");
+  color: getColors("blanco", 0);
+}
+.c-image-text__p3 {
+  font-family: getFontFamily(1);
+  font-size: getFontSize("2xl");
+  color: getColors("blanco", 0);
+}
+.c-image-text__button {
+  font-family: getFontFamily(1);
+  font-size: getFontSize("2xl");
+  color: getColors("blanco", 0);
+  border: getColors("blanco", 0) solid 1px;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: getPadding(4);
+}

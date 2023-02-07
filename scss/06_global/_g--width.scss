@@ -1,0 +1,12 @@
+@each $key in getWidthKeys(){
+    $value:getWidth($key);
+    .g--width-#{$key} {
+        width: $value;
+    }
+    .g--min-width-#{$key} {
+        min-width: $value;
+    }
+    .g--max-width-#{$key} {
+        max-width: $value;
+    }
+}

@@ -1,0 +1,88 @@
+@each $key in getPaddingKeys() {
+  $value:getPadding($key);
+  .g--padding-#{$key}{
+    padding: $value;
+  }
+  .g--padding-left-#{$key}{
+    padding-left: $value;
+  }
+  .g--padding-right-#{$key}{
+    padding-right: $value;
+  }
+  .g--padding-top-#{$key}{
+    padding-top: $value;
+  }
+  .g--padding-bottom-#{$key}{
+    padding-bottom: $value;
+  }
+  .g--padding-horizontal-#{$key}{
+      padding-left: $value;
+      padding-right: $value;
+  }
+  .g--padding-vertical-#{$key}{
+      padding-top: $value;
+      padding-bottom: $value;
+  }
+  @each $media_key in getMediaKeys() {
+    $media_value: getMedia($media_key);
+  }
+}
+
+@media(min-width:getWidth(6)){
+  @each $key in getPaddingKeys() {
+    $value:getPadding($key);
+    .g--padding-#{$key}\@tablet{
+      padding: $value;
+    }
+    .g--padding-left-#{$key}\@tablet{
+      padding-left: $value;
+    }
+    .g--padding-right-#{$key}\@tablet{
+      padding-right: $value;
+    }
+    .g--padding-top-#{$key}\@tablet{
+      padding-top: $value;
+    }
+    .g--padding-bottom-#{$key}\@tablet{
+      padding-bottom: $value;
+    }
+    .g--padding-horizontal-#{$key}\@tablet{
+        padding-left: $value;
+        padding-right: $value;
+    }
+    .g--padding-vertical-#{$key}\@tablet{
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+    
+  }
+}
+
+@media(min-width:getWidth(8)){
+  @each $key in getPaddingKeys() {
+    $value:getPadding($key);
+    .g--padding-#{$key}\@desktop{
+      padding: $value;
+    }
+    .g--padding-left-#{$key}\@desktop{
+      padding-left: $value;
+    }
+    .g--padding-right-#{$key}\@desktop{
+      padding-right: $value;
+    }
+    .g--padding-top-#{$key}\@desktop{
+      padding-top: $value;
+    }
+    .g--padding-bottom-#{$key}\@desktop{
+      padding-bottom: $value;
+    }
+    .g--padding-horizontal-#{$key}\@desktop{
+        padding-left: $value;
+        padding-right: $value;
+    }
+    .g--padding-vertical-#{$key}\@desktop{
+        padding-top: $value;
+        padding-bottom: $value;
+    }   
+  }
+}

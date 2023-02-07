@@ -1,0 +1,24 @@
+@each $key in getFontSizeKeys() {
+  $value:getFontSize($key);
+    .g--font-size-#{$key} {
+      font-size: $value;
+    }
+}
+
+@media(min-width:getWidth(6)){
+  @each $key in getFontSizeKeys() {
+    $value:getFontSize($key);
+      .g--font-size-#{$key}\@tablet {
+        font-size: $value;
+      }
+  }
+}
+
+@media(min-width:getWidth(8)){
+  @each $key in getFontSizeKeys() {
+    $value:getFontSize($key);
+      .g--font-size-#{$key}\@desktop {
+        font-size: $value;
+      }
+  }
+}

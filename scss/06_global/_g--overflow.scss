@@ -1,0 +1,12 @@
+@each $key in getOverflowKeys(){
+    $value:getOverflow($key);
+    .g--overflow-#{$key} {
+        overflow: $value;
+    }
+    .g--overflow-x-#{$key} {
+        overflow-x: $value;
+    }
+    .g--overflow-y-#{$key} {
+        overflow-y: $value;
+    }
+}

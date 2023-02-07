@@ -1,0 +1,24 @@
+@each $key in getGapKeys() {
+    $value:getGap($key);
+      .g--gap-#{$key} {
+        gap: $value;
+      }
+  }
+  
+  @media(min-width:getWidth(6)){
+    @each $key in getGapKeys() {
+      $value:getGap($key);
+        .g--gap-#{$key}\@tablet {
+          gap: $value;
+        }
+    }
+  }
+  
+  @media(min-width:getWidth(8)){
+    @each $key in getGapKeys() {
+      $value:getGap($key);
+        .g--gap-#{$key}\@desktop {
+          gap: $value;
+        }
+    }
+  }

@@ -1,0 +1,152 @@
+//COLORS
+
+@function getColors($nombreColor, $clave){
+  $arrayColor:map-get($colors, $nombreColor);
+  @return nth($arrayColor, $clave + 1);
+}
+
+@function getColorsKeys(){
+    @return (map-keys($colors));
+}
+
+@function getVariantesColorsKeys(){
+  $arrayKeys:();
+    @for $i from 0 to length(map-get($colors, "principal")){      
+      $arrayKeys:append($arrayKeys, $i);
+    }
+@return $arrayKeys;
+}
+
+
+
+//BORDER-RADIUS
+
+  @function getBorderRadius($clave){
+    @return nth($border-radius, $clave + 1);
+  }
+
+  @function getBorderRadiusKeys(){
+    $arrayKeys:();
+    @for $i from 0 to length($border-radius){  
+        $arrayKeys:append($arrayKeys, $i);
+    }
+    @return $arrayKeys;
+  }
+
+
+  //PADDINGS
+
+  @function getPadding($clave){
+    @return nth($padding-values, $clave + 1);
+  }
+
+  @function getPaddingKeys(){
+    $arrayKeys:();
+    @for $i from 0 to length($padding-values){  
+        $arrayKeys:append($arrayKeys, $i);
+    }
+    @return $arrayKeys;
+  }
+
+    //MARGIN
+
+    @function getMargin($clave){
+      @return nth($margin, $clave + 1);
+    }
+  
+    @function getMarginKeys(){
+      $arrayKeys:();
+      @for $i from 0 to length($margin){  
+          $arrayKeys:append($arrayKeys, $i);
+      }
+      @return $arrayKeys;
+    }
+
+    
+    //FONT-FAMILY
+
+    @function getFontFamily($clave){
+      @return unquote(nth($font-family, $clave + 1));
+    }
+  
+    @function getFontFamilyKeys(){
+      $arrayKeys:();
+      @for $i from 0 to length($font-family){  
+          $arrayKeys:append($arrayKeys, $i);
+      }
+      @return $arrayKeys;
+    }
+
+  //FONT-SIZE
+
+  @function getFontSize($clave){
+    @return map-get($font-size, $clave);
+  }
+
+  @function getFontSizeKeys(){
+    @return map-keys($font-size);
+}
+
+
+//GAP
+
+@function getGapKeys(){
+  $arrayKeys:();
+    @for $i from 0 to length($gap){  
+        $arrayKeys:append($arrayKeys, $i);
+    }
+    @return $arrayKeys; 
+}
+
+
+@function getGap($key){
+  @return nth($gap, $key + 1);
+}
+
+
+//SHADOW
+
+@function getShadow($key){
+  @return unquote(nth($shadow, $key + 1));//unquote quita ""
+}
+
+@function getShadowKeys(){
+  $arrayKeys:();
+    @for $i from 0 to length($shadow){  
+        $arrayKeys:append($arrayKeys, $i);
+    }
+    @return $arrayKeys;
+}
+
+//OVERFLOW
+
+@function getOverflow($clave){
+  @return map-get($overflow, $clave);
+}
+
+@function getOverflowKeys(){
+  @return map-keys($overflow);
+}
+
+//WIDTH
+
+@function getWidth($clave){
+  @return nth($width, $clave + 1);
+}
+
+@function getWidthKeys(){
+  $arrayKeys:();
+  @for $i from 0 to length($width){  
+      $arrayKeys:append($arrayKeys, $i);
+  }
+  @return $arrayKeys;
+}
+
+//MEDIA
+@function getMedia($clave){
+  @return map-get($media, $clave);
+}
+
+@function getMediaKeys(){
+  @return map-keys($media);
+}
