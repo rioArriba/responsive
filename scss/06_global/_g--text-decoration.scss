@@ -5,10 +5,10 @@
       $modificador: "\\@#{$media_key}";
     }
     @media (min-width: $media_value) {
-      @each $key in getDisplayKeys() {
-        $value: getDisplay($key);
-        .l-display--#{$key}#{$modificador} {
-          display: $value;
+      @each $key in getTextDecorationKeys() {
+        $value:getTextDecoration($key);
+        .g--text-decoration-#{$key}#{$modificador} {
+          text-decoration: $value;
         }
       }
     }

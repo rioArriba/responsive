@@ -1,0 +1,36 @@
+.l-grid {
+  display: grid;
+
+  @for $i from 1 to 12 {
+    &--columns-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  @for $i from 1 to 12 {
+    &--rows-#{$i} {
+      grid-template-rows: repeat($i, 1fr);
+    }
+  }
+  @each $media_key in getMediaKeys() {
+    $media_value: getMedia($media_key);
+    $modificador: "";
+    @if ($media_key != "") {
+      $modificador: "\\@#{$media_key}";
+    }
+    @media (min-width: $media_value) {
+      @each $key in getGapKeys() {
+        $value: getGap($key);
+        &--gap-#{$key}#{$modificador} {
+          gap: $value;
+        }
+        &--gap-horizontal#{$key}#{$modificador} {
+          row-gap: $value;
+        }
+        &--gap-vertical#{$key}#{$modificador} {
+          column-gap: $value;
+        }
+      }
+    }
+  }
+}

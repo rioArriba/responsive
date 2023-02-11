@@ -5,15 +5,11 @@
       $modificador: "\\@#{$media_key}";
     }
     @media (min-width: $media_value) {
-      @each $key in getGapKeys() {
-        $value: getGap($key);
-        .l-flex--gap-#{$key}#{$modificador} {
-          gap: $value;
-        }
-        .l-grid--gap-#{$key}#{$modificador} {
-          gap: $value;
+      @each $key in getDisplayKeys() {
+        $value: getDisplay($key);
+        .g--display-#{$key}#{$modificador} {
+          display: $value;
         }
       }
     }
   }
-  

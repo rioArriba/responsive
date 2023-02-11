@@ -1,0 +1,22 @@
+@each $media_key in getMediaKeys() {
+    $media_value: getMedia($media_key);
+    $modificador: "";
+    @if ($media_key != "") {
+      $modificador: "\\@#{$media_key}";
+    }
+    @media (min-width: $media_value) {
+      @each $key in getOverflowKeys() {
+        $value: getOverflow($key);
+        .g--overflow-#{$key}#{$modificador} {
+          overflow: $value;
+        }
+        .g--overflow-x-#{$key}#{$modificador} {
+          overflow-x: $value;
+        }
+        .g--overflow-y-#{$key}#{$modificador} {
+          overflow-y: $value;
+        }
+      }
+    }
+  }
+  

@@ -17,6 +17,15 @@
 @return $arrayKeys;
 }
 
+//VIEWPORT
+
+@function getViewportWidth($key){
+  @return nth($viewport-width, $key + 1);
+}
+
+@function getViewportHeight($key){
+  @return nth($viewport-height, $key + 1);
+}
 
 
 //BORDER-RADIUS
@@ -33,6 +42,20 @@
     @return $arrayKeys;
   }
 
+  //TEXT-ALIGN
+
+  
+  @function getTextAlign($clave){
+    @return nth($text-align, $clave + 1);
+  }
+
+  @function getTextAlignKeys(){
+    $arrayKeys:();
+    @for $i from 0 to length($text-align){  
+        $arrayKeys:append($arrayKeys, $i);
+    }
+    @return $arrayKeys;
+  }
 
   //PADDINGS
 
@@ -102,6 +125,16 @@
 @function getGap($key){
   @return nth($gap, $key + 1);
 }
+
+//TEXT-DECORATION
+
+@function getTextDecoration($key){
+  @return unquote(map-get($text-decoration, $key));
+}
+
+@function getTextDecorationKeys(){
+    @return map-keys($text-decoration);
+  }
 
 
 //SHADOW

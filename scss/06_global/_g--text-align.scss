@@ -1,0 +1,16 @@
+@each $media_key in getMediaKeys() {
+  $media_value: getMedia($media_key);
+  $modificador: "";
+  @if ($media_key != "") {
+    $modificador: "\\@#{$media_key}";
+  }
+  @media (min-width: $media_value) {
+    @each $key in getTextAlignKeys() {
+        $value: getTextAlign($key);
+      .g--text-aling-#{$value}#{$modificador} {
+        text-align: $value;
+      }
+      
+    }
+  }
+}
