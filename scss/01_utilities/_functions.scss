@@ -175,6 +175,20 @@
   @return $arrayKeys;
 }
 
+//WIDTH
+
+@function getHeight($clave){
+  @return nth($height, $clave + 1);
+}
+
+@function getHeightKeys(){
+  $arrayKeys:();
+  @for $i from 0 to length($height){  
+      $arrayKeys:append($arrayKeys, $i);
+  }
+  @return $arrayKeys;
+}
+
 //MEDIA
 @function getMedia($clave){
   @return map-get($media, $clave);
