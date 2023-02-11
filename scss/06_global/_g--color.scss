@@ -5,6 +5,9 @@
     $modificador: "\\@#{$media_key}";
   }
   @media (min-width: $media_value) {
+    .g--background-transparent#{$modificador} {
+      background-color: transparent;
+    }
     @each $tipoColor in getColorKeys() {
       @each $variante in getVariantesColorKeys() {
         $value: getColor($tipoColor, $variante);

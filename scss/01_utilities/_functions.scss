@@ -160,6 +160,19 @@
 @function getOverflowKeys(){
   @return map-keys($overflow);
 }
+//OPACITY
+
+@function getOpacity($clave){
+  @return nth($opacity, $clave + 1);
+}
+
+@function getOpacityKeys(){
+  $arrayKeys:();
+  @for $i from 0 to length($opacity){  
+      $arrayKeys:append($arrayKeys, $i);
+  }
+  @return $arrayKeys;
+}
 
 //WIDTH
 
