@@ -4,6 +4,10 @@ $viewport-height:(0vh, 10vh, 20vh, 30vh, 40vh, 50vh, 60vh, 70vh, 80vh, 90vh, 100
 
 $opacity:(0.0, 0.2, 0.4, 0.6, 0.8, 1.0);
 
+$position:("absolute":absolute, "relative":relative, "fixed":fixed, "sticky": sticky);
+
+$z-index:(auto, 1, 2, 3, 4, 5, 6, 7);
+
 $text-decoration: (
   "underline-dotted-red": "underline dotted red",
   "underline-dashed-green": "underline dashed green",
@@ -98,8 +102,8 @@ $font-family: (
 );
 
 $font-size: (
-  "xs": 12px,
-  "s": 14px,
+  "xs": 8px,
+  "s": 12px,
   "m": 16px,
   "l": 20px,
   "xl": 26px,

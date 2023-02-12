@@ -1,6 +1,57 @@
 .c-button {
-    color: getColor("rojo",5);
-    background-color: getColor("azul", 5)00;
-    @include box-shadow(2);
-    @include border-radius(5);    
+  background-color: getColors("principal", 4);
+  color: getColors("blanco", 1);
+  font-weight: 600;
+  font-size: getFontSize("m");
+  letter-spacing: 0.15px 0.3px;
+  padding-top: getPadding(5);
+  padding-bottom: getPadding(5);
+  padding-left: getPadding(6);
+  padding-right: getPadding(6);
+  text-align: center;
+  // font-family:getFontFamily("principal");
+  border-radius: getBorderRadius(3);
+  &:hover {
+    background-color: getColors("principal", 3);
   }
+  &:active {
+    box-shadow: inset 0px 0px 4px 2px getColors("gris", 1),
+      inset 0px -2px 2px 0px getColors("blanco", 0);
+  }
+  &--size-stretch {
+    padding-top: getPadding(4);
+    padding-bottom: getPadding(4);
+    padding-left: getPadding(8);
+    padding-right: getPadding(8);
+    margin-bottom: getMargin(2);
+  }
+
+  &--login {
+    background: #fff;
+    font-size: getFontSize("l");
+    margin-top: getMargin(9);
+    padding: getPadding(6) getPadding(7);
+    border-radius: 26px;
+    border: 1px solid getColors("principal", 0);
+    //text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: getColors("principal", 5);
+    @include box-shadow(1);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  &--login:active,
+  &--login:focus,
+  &--login:hover {
+    border-color: getColors("principal", 6);
+    outline: none;
+  }
+  &--icon {
+    font-size: getFontSize("2xl");
+    margin-left: auto;
+    color: getColors("principal", 6);
+  }
+}

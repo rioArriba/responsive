@@ -5,6 +5,18 @@
     $modificador: "\\@#{$media_key}";
   }
   @media (min-width: $media_value) {
+    .g--margin-left-auto#{$modificador} {
+      margin-left:auto;
+    }
+    .g--margin-top-auto#{$modificador} {
+      margin-top:auto;
+    }
+    .g--margin-right-auto#{$modificador} {
+      margin-right:auto;
+    }
+    .g--margin-bottom-auto#{$modificador} {
+      margin-bottom:auto;
+    }
     @each $key in getMarginKeys() {
       $value: getMargin($key);
 

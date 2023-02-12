@@ -1,3 +1,27 @@
+//POSITION 
+@function getPosition($clave){
+  @return map-get($position, $clave);
+}
+
+@function getPositionKeys(){
+  @return map-keys($position);
+}
+
+//Z-INDEX
+
+@function getZIndex($key){
+  @return nth($z-index, $key + 1);
+}
+
+@function getZIndexKeys(){
+  $arrayKeys:();
+  @for $i from 0 to length($z-index){  
+      $arrayKeys:append($arrayKeys, $i);
+  }
+  @return $arrayKeys;
+}
+
+
 //COLORS
 
 @function getColor($nombreColor, $clave){
@@ -25,6 +49,23 @@
 
 @function getViewportHeight($key){
   @return nth($viewport-height, $key + 1);
+}
+
+
+@function getViewportWidthKeys(){
+  $arrayKeys:();
+  @for $i from 0 to length($viewport-width){  
+      $arrayKeys:append($arrayKeys, $i);
+  }
+  @return $arrayKeys;
+}
+
+@function getViewportHeightKeys(){
+  $arrayKeys:();
+  @for $i from 0 to length($viewport-height){  
+      $arrayKeys:append($arrayKeys, $i);
+  }
+  @return $arrayKeys;
 }
 
 

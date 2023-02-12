@@ -1,0 +1,15 @@
+@each $media_key in getMediaKeys() {
+    $media_value: getMedia($media_key);
+    $modificador: "";
+    @if ($media_key != "") {
+      $modificador: "\\@#{$media_key}";
+    }
+    @media (min-width: $media_value) {
+      @each $key in getPositionKeys() {
+        $value:getPosition($key);
+        .g--position-#{$key}#{$modificador} {
+          position: $value;
+        }
+      }
+    }
+  }
